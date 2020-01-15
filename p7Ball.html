@@ -1,0 +1,46 @@
+<html>
+  <head>
+    <script src="https://cdn.jsdelivr.net/npm/p5@0.10.2/lib/p5.js"></script>
+    
+    
+    
+  </head>
+  
+  
+  <body>
+    
+    
+    
+    
+    <script>
+var bImage
+var w = window.innerWidth;
+var h = window.innerHeight
+function setup() {
+  //this creates a canvas that is x and y
+  
+  createCanvas(w, h, WEBGL);
+  bImage = loadImage("pic.jpg")
+}
+
+function draw() {
+  //background("grey");
+  //rotateY(mouseX/100)//rotate around y axis when move mouse horizontal divide by 100 to decrease sensitivity
+  //rotateX(mouseY/100)//rotate around x axis when move mouse vertical divide by 100 to decrease sensitivity
+  //rect(100,-100,100,100)
+  //fill("green");
+  
+  //rect(89,30,100,100)
+  //fill("yellow")
+  //rect(-100,500,100,1000)
+  //fill("blue");
+  noStroke();
+  clear();
+  background(bImage)
+  
+  
+}
+    </script>
+  </body>
+</html>
+
