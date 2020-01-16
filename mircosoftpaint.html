@@ -1,0 +1,41 @@
+<html>
+  <head>
+    <script src="https://cdn.jsdelivr.net/npm/p5@0.10.2/lib/p5.js"></script>
+    
+    
+    <style>
+      body{
+        background-image:url("pic.jpg");
+      }
+    </style>
+  </head>
+  
+  
+  <body>
+    
+    
+    
+    
+    <script>
+var w = window.innerWidth;
+var h = window.innerHeight;
+
+function setup() {
+  //this creates a canvas that is x and y
+  
+  createCanvas(w, h);
+}
+
+
+function draw() {
+  if(mouseIsPressed){
+  circle(mouseX,mouseY,20);
+  fill("black");
+  noStroke();
+  }
+  
+}
+    </script>
+  </body>
+</html>
+
