@@ -1,0 +1,47 @@
+<html>
+  <head>
+    
+        <script src="p5.min.js"></script>
+        <script src="p5.dom.js"></script>
+
+
+
+  </head>
+  <body>
+    <script>
+var pic;
+var w = window.innerWidth;
+var h = window.innerHeight;
+function preLoad(){
+  pic = loadImage("pic.jpg")
+}
+function setup(){
+  createCanvas(w,h,WEBGL)
+  //pic = createGraphics(100,100)
+  //pic.textSize(25)
+  //pic = createCapture(VIDEO)
+  //pic.size(10,10)
+    }
+function draw(){
+  background(100)
+  //pic.background(255)
+  //pic.circle(20,20,20)
+  //pic.fill("black")
+
+
+  texture(pic)
+  
+  rotateY(mouseX/10)
+  rotateX(mouseY/100)
+  box(200)
+  noStroke()
+
+      
+    }
+
+      
+      
+      
+    </script>
+  </body>
+</html>
