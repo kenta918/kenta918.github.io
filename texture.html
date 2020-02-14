@@ -9,32 +9,25 @@
   </head>
   <body>
     <script>
-var pic;
+var pic;//sets global variable for your texture
 var w = window.innerWidth;
 var h = window.innerHeight;
 function preload(){
-  pic = loadImage("pic.jpg")
+  pic = loadImage("pic.jpg")//puts image as texture variable
 }
 function setup(){
-  createCanvas(w,h,WEBGL)
-  //pic = createGraphics(100,100)
-  //pic.textSize(25)
-  //pic = createCapture(VIDEO)
-  //pic.size(10,10)
+  createCanvas(w,h,WEBGL);
     }
 function draw(){
   background(100)
-  //pic.background(255)
-  //pic.circle(20,20,20)
-  //pic.fill("black")
+  pic.background(255)
+  
 
 
   texture(pic)
-  
   rotateY(mouseX/10)
   rotateX(mouseY/100)
-  box(200)
-  noStroke()
+  box(200,300)
 
       
     }
