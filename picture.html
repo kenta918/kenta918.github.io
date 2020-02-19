@@ -1,0 +1,32 @@
+<html>
+  <head>
+    
+        <script src="p5.min.js"></script>
+        <script src="p5.dom.js"></script>
+
+
+
+  </head>
+  <body>
+    <script>
+var pic;//sets global variable for your texture
+var w = window.innerWidth;
+var h = window.innerHeight;
+function preload(){
+  pic = loadImage("p5/pic.jpg")//puts image as texture variable
+}
+function setup(){
+  createCanvas(w,h);
+    }
+function draw(){
+  image(pic,0,0,w,h)
+ 
+      
+    }
+
+      
+      
+      
+    </script>
+  </body>
+</html>
