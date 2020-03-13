@@ -1,0 +1,96 @@
+<html>
+  <head>
+        <script src="p5.min.js"></script>
+        <script src="jumper.js"></script>
+        <script src="barrier.js"></script>
+        <script src="p5.collide2d.min.js"></script>
+
+
+<style>
+  body{
+    margin:0;
+    padding:0;
+  }
+  #score{
+    position:absolute;
+  }
+</style>
+  </head>
+  <body>
+    <p id="score" ></p>
+    <script>
+var w = window.innerWidth;
+var h = window.innerHeight;
+var jumper = new jumper();//declare object
+//var barrier = new barrier();
+var hit = false;
+var bar=[];
+var jumpcount =0
+var mario;
+function preload(){
+  mario  = loadImage("mario.png")
+}
+function setup(){
+  createCanvas(w,h);
+  
+  for (let i = 0; i < 5; i++) {
+    bar.push(new barrier());
+  }
+  
+}
+function draw(){
+  clear();//clear canvas
+  jumper.show();//load show
+  jumper.update();//load update
+  //barrier.ret()
+  if((keyIsDown(37))&& (jumper.x > 25)){//left
+    jumper.x -= 10;
+  }
+  if((keyIsDown(39)) && (jumper.x < w-25)){
+    jumper.x += 10;
+
+  }
+  for (let i = 0; i < bar.length; i++) {
+    bar[i].ret();
+
+    bar[i].update2();
+
+    hit = collideRectCircle(bar[i].x2 ,bar[i].y2,200,20,jumper.x,jumper.y,50,50);
+    if(hit === true){
+      
+      document.getElementById("score").innerHTML= "";
+      location.reload();
+      window.alert("Game over")
+      
+  }
+  }
+  
+}
+function keyPressed(){
+  if(keyCode === 32){//up
+    jumper.up();
+    jumpcount++;//adds to the jumpcount
+    
+  }
+  
+}
+
+
+
+  
+  
+
+
+
+      
+  
+      
+    </script>
+  </body>
+</html>
+
+
+
+
+
+
