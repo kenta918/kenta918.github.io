@@ -12,7 +12,6 @@ function barrier(){
     fill(random(0,255),random(0,255),random(0,255))
     
     rect(this.x2,this.y2,200,20)
-    texture(mario);
   }
   this.update2 = function(){
     this.velocity2 += this.gravity2;

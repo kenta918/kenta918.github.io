@@ -10,6 +10,7 @@ function jumper(){
   //I am building  function to display on the screen this is where I put my values of wht the jumper will look like
   this.show = function(){
     fill(255,0,0);
+    texture(mario)
     ellipse(this.x,this.y,50,50);
     
   }
