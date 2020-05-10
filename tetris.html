@@ -1,0 +1,262 @@
+<html>
+  <head>
+    <script src="p5.min.js"></script>
+    <script src="tetris.js"></script>
+    <script src ="p5.collide2d.min.js"></script>
+    <style>
+  body{
+    margin:0;
+    padding:0;
+    overflow:hidden;
+  }
+  #box{
+    width:5%;
+    height:10%;
+    border:solid;
+    position:absolute;
+    margin-top:5%;
+    margin-left:10%;
+    text-align:center;
+    border-color:rgba(0,255,0,1);
+    color:rgba(0,255,0,1);
+
+
+
+  }
+  #box2{
+    width:5%;
+    height:10%;
+    border:solid;
+    position:absolute;
+    margin-top:5%;
+    margin-left:2%;
+    text-align:center;
+    border-color:rgba(0,255,0,1);
+    color:rgba(0,255,0,1);
+
+  }
+  #box3{
+    width:5%;
+    height:10%;
+    border:solid;
+    position:absolute;
+    margin-top:12%;
+    margin-left:6%;
+    text-align:center;
+    border-color:rgba(0,255,0,1);
+    color:rgba(0,255,0,1);
+
+  }
+  
+  </style>
+  </head>
+  
+  <body>
+   
+    <div id="box"><p><b>Score</b></p><p id="score"></p></div>
+    <div id="box2"><p><b>HP</b></p><p id="health"></p></div>
+    <div id="box3"><p><b>Level</b></p><p id="lvl"></p></div>
+
+    
+    <script>
+    
+var w = window.innerWidth;
+var h = window.innerHeight;
+var cuby=[]
+var player = new shooter();
+var hit = false;
+var levels;
+var k;
+var cubeCount = 3;
+var moveRight = 10
+var moveLeft = 10
+var i;
+var speed1 = 1
+var speed2 = 3
+var img1;
+var img2;
+document.getElementById("lvl").innerHTML = levels
+function preload(){
+  img1=loadImage('ship.png')
+  img2=loadImage('shooter.png')
+}
+function setup(){
+
+  createCanvas(w,h, WEBGL)
+  
+  for(k=0; k<cubeCount; k++){
+    cuby.push( new cube());
+  
+  }
+  document.getElementById("health").innerHTML = 5
+  document.getElementById("lvl").innerHTML = 0
+  frameRate(200)
+
+
+}
+
+function draw(){
+
+  clear();
+  background(0,0,0)
+
+  for( i=0; i <cuby.length; i++){
+    cuby[i].show();
+    
+    cuby[i].update();
+    
+    hit = collideRectCircle(cuby[i].x,cuby[i].y,69,69,player.xc,player.bullet,15);
+    if(hit === true){
+      cuby[i].x= random(343,1033)
+      cuby[i].y=20
+      document.getElementById("score").innerHTML ++;
+      
+      
+      player.bullet = 720;
+      player.velo = 0
+      player.xc =player.x
+    }
+    
+  }
+  player.shoot()
+  player.show2()
+  player.update3()
+  
+  
+  
+
+      
+      
+    
+
+  
+  
+ 
+  noFill();
+  stroke('rgb(0,255,0)')
+  rect(343,20,761,690);
+  line(377.5,20,377,710)
+  line(412,20,412,710)
+  line(446.5,20,446.5,710)
+  line(481,20,481,710)
+  line(515.5,20,515.5,710)
+  line(550,20,550,710)
+  
+  line(584.5,20,584.5,710)
+  line(619,20,619,710)
+  line(653.5,20,653.5,710)
+  line(688,20,688,710)
+  line(722.5,20,722.5,710)
+  line(757,20,757,710)
+  line(791.5,20,791.5,710)
+  line(826,20,826,710)
+  line(860.5,20,860.5,710)
+  line(895,20,895,710)
+  line(929.5,20,929.5,710)
+  line(964,20,964,710)
+  line(998.5,20,998.5,710)
+  line(1037.5,20,1037.5,710)
+  line(1072,20,1072,710)
+
+  
+  line(343,54.5,1102,54.5)
+  line(343,89,1102,89)
+  line(343,123.5,1102,123.5)
+  line(343,158,1102,158)
+  line(343,192.5,1102,192.5)
+  line(343,227,1102,227)
+  line(343,261.5,1102,261.5)
+  line(343,296,1102,296)
+  line(343,330.5,1102,330.5)
+  line(343,364.5,1102,364.5)
+  line(343,399,1102,399)
+  line(343,433.5,1102,433.5)
+  line(343,468,1102,468)
+  line(343,502.5,1102,502.5)
+  line(343,537,1102,537)
+  line(343,571.5,1102,571.5)
+  line(343,606,1102,606)
+  line(343,640.5,1102,640.5)
+  line(343,675,1102,675)
+  
+  
+  
+  
+  if((keyIsDown(RIGHT_ARROW)) ||(keyIsDown(68))&&(player.x2 <1102) ){
+    player.x += moveRight;
+    player.x2 += moveRight;
+    player.x3 += moveRight;
+    if(player.bullet == 720){
+    player.xc += moveRight}
+  }
+  if((keyIsDown(LEFT_ARROW)) ||(keyIsDown(65))&&(player.x3 > 330)){
+    player.x -= moveLeft;
+    player.x2 -= moveLeft;
+    player.x3 -= moveLeft;
+    if(player.bullet == 720){
+    player.xc -= moveLeft;
+    }
+  }
+
+  
+if(document.getElementById("health").innerHTML == 0){
+  location.reload();
+  window.alert("you died");
+}
+
+if(document.getElementById("score").innerHTML== 10){
+  document.getElementById("lvl").innerHTML=2;
+  
+  speed1 =2;
+  speed2=4;
+ }
+else if(document.getElementById("score").innerHTML == 20){
+  document.getElementById("lvl").innerHTML =3;
+  
+  speed1 =3;
+  speed2=6;
+    }
+else if(document.getElementById("score").innerHTML ==40){
+  document.getElementById("lvl").innerHTML= 4;
+  
+  speed1 =3;
+  speed2=7;
+    }
+else if(document.getElementById("score").innerHTML ==50){
+  document.getElementById("lvl").innerHTML =5
+ 
+  speed1 =10;
+  speed2=20;
+  
+    }
+      
+    
+//if(keyIsDown(32)){
+ //player.up()
+//}
+  if(mouseIsPressed){
+    player.up();
+
+  }
+
+
+}
+function keyPressed(){
+   if(keyCode == 32){
+    player.up();
+    //window.alert(speed1)
+    window.alert(cuby[i].speed3)
+     
+   }
+     }
+ 
+
+
+
+
+
+
+
+    </script>
+  </body>
+</html>
