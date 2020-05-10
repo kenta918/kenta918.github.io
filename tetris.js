@@ -23,7 +23,7 @@ function cube(){
   }
   this.show = function(){
     
-    //texture(img1)
+    fill(255,0,0);
     rect(this.x,this.y,this.w,this.h)
     
     
@@ -43,14 +43,14 @@ function shooter(){
   this.bullet =720
   this.xc = this.x
   this.gravity = 0
-  this.lift=-10
+  this.lift=-30
   this.velo=0
   
   this.update2 = function(){
     
   }
   this.show2 = function(){
-    //texture(img2)
+    fill(255,0,0)
     
     triangle(this.x,this.y,this.x2,this.y2,this.x3,this.y3)
   }

@@ -7,7 +7,7 @@
   body{
     margin:0;
     padding:0;
-   
+    overflow:hidden;
   }
   #box{
     width:5%;
@@ -68,21 +68,21 @@ var hit = false;
 var levels;
 var k;
 var cubeCount = 3;
-var moveRight = 10
-var moveLeft = 10
+var moveRight = 9
+var moveLeft = 9
 var i;
 var speed1 = 1
-var speed2 = 3
+var speed2 = 4
 var img1;
 var img2;
 document.getElementById("lvl").innerHTML = levels
-function preload(){
-  img1=loadImage('ship.png')
-  img2=loadImage('shooter.png')
-}
+//function preload(){
+ // img1=loadImage('ship.png')
+  //img2=loadImage('shooter.png')
+//}
 function setup(){
 
-  createCanvas(w,h, WEBGL)
+  createCanvas(w,h)
   
   for(k=0; k<cubeCount; k++){
     cuby.push( new cube());
@@ -182,14 +182,14 @@ function draw(){
   
   
   
-  if((keyIsDown(RIGHT_ARROW)) ||(keyIsDown(68))&&(player.x2 <1102) ){
+  if((player.x2 <1102)&&(keyIsDown(RIGHT_ARROW)) ||(keyIsDown(68))&&(player.x2 <1102)){
     player.x += moveRight;
     player.x2 += moveRight;
     player.x3 += moveRight;
     if(player.bullet == 720){
     player.xc += moveRight}
   }
-  if((keyIsDown(LEFT_ARROW)) ||(keyIsDown(65))&&(player.x3 > 330)){
+  if((player.x3 > 330)&&(keyIsDown(LEFT_ARROW)) ||(keyIsDown(65))&&(player.x3 > 330)){
     player.x -= moveLeft;
     player.x2 -= moveLeft;
     player.x3 -= moveLeft;
