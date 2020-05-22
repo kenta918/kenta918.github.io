@@ -75,6 +75,8 @@ var speed1 = 1
 var speed2 = 4
 var img1;
 var img2;
+fr = 60;
+mon = false
 document.getElementById("lvl").innerHTML = levels
 //function preload(){
  // img1=loadImage('ship.png')
@@ -90,7 +92,7 @@ function setup(){
   }
   document.getElementById("health").innerHTML = 5
   document.getElementById("lvl").innerHTML = 0
-  frameRate(200)
+  frameRate(fr)
 
 
 }
@@ -248,7 +250,17 @@ function keyPressed(){
     window.alert(cuby[i].speed3)
      
    }
+  else if((keyCode== 80) && (mon == false)){
+    noLoop();
+    mon = true;
+  }
+  else if((keyCode == 80) &&(mon == true)){
+    loop();
+    mon = false;
+  }
+  
      }
+
  
 
 
