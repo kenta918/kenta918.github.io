@@ -95,7 +95,7 @@ function shooter(){
   }
   this.show2 = function(){
     fill(255,0,0)
-    texture(img)
+    texture(img1)
     triangle(this.x,this.y,this.x2,this.y2,this.x3,this.y3)
   }
   
