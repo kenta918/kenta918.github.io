@@ -47,7 +47,19 @@
     color:rgba(0,255,0,1);
 
   }
-  
+  #box4{
+    width:20%;
+    height:50%;
+    border:solid;
+    position:absolute;
+    margin-top:6%;
+    
+    margin-left:77%;
+    text-align:center;
+    border-color:rgba(0,255,0,1);
+    color:rgba(0,255,0,1);
+
+  }
   </style>
   </head>
   
@@ -56,10 +68,11 @@
     <div id="box"><p><b>Score</b></p><p id="score"></p></div>
     <div id="box2"><p><b>HP</b></p><p id="health"></p></div>
     <div id="box3"><p><b>Level</b></p><p id="lvl"></p></div>
+    <div id="box4"><p><b>High Scores</b></p><p></p></div>
 
     
     <script>
-    
+//var axis = [[343],[377.5],[412],[446.5],[481],[515.5],[550],[584.5],[619],[653.5],[688],[722.5],[757],[791.5],[826],[860.5],[895],[929.5],[964],[998.5],[1033]]
 var w = window.innerWidth;
 var h = window.innerHeight;
 var cuby=[]
@@ -67,25 +80,28 @@ var player = new shooter();
 var hit = false;
 var levels;
 var k;
-var cubeCount = 3;
-var moveRight = 9
-var moveLeft = 9
+var cubeCount = 2;
+var moveRight = 10;
+var moveLeft = 10;
 var i;
-var speed1 = 1
-var speed2 = 4
+//var speed1 = 1
+//var speed2 = 4
 var img1;
 var img2;
-fr = 60;
+var hit2 = false
+fr =60;
 mon = false
+
 document.getElementById("lvl").innerHTML = levels
-//function preload(){
- // img1=loadImage('ship.png')
-  //img2=loadImage('shooter.png')
-//}
+function preload(){
+  img1=loadImage('ship.png')
+  img2=loadImage('shooter.png')
+}
 function setup(){
 
-  createCanvas(w,h)
-  
+    var cns = createCanvas(w,h, WEBGL)
+    //cns.position(100,0,'relative')
+    //cns.style("z-index:-100");
   for(k=0; k<cubeCount; k++){
     cuby.push( new cube());
   
@@ -107,22 +123,30 @@ function draw(){
     
     cuby[i].update();
     
+    
     hit = collideRectCircle(cuby[i].x,cuby[i].y,69,69,player.xc,player.bullet,15);
     if(hit === true){
-      cuby[i].x= random(343,1033)
-      cuby[i].y=20
+      cuby[i].x= random(-400,290)
+      cuby[i].y=-300
       document.getElementById("score").innerHTML ++;
       
       
-      player.bullet = 720;
+      player.bullet = 320;
       player.velo = 0
       player.xc =player.x
+      
     }
-    
+    /*hit2 = collideLineRect(-400,610,761,610,cuby[i].x,cuby[i].y,69,69)
+      if(hit2 === true){
+      cuby[i].x = random(-400,290)
+      cuby[i].y = -300
+      window.alert("esdfjds")
+  }*/
   }
   player.shoot()
   player.show2()
   player.update3()
+   
   
   
   
@@ -136,8 +160,10 @@ function draw(){
  
   noFill();
   stroke('rgb(0,255,0)')
-  rect(343,20,761,690);
-  line(377.5,20,377,710)
+  
+   rect(-400,-300,761,610);
+   line(-400,310,290,310)
+  /*line(377.5,20,377,710)
   line(412,20,412,710)
   line(446.5,20,446.5,710)
   line(481,20,481,710)
@@ -179,84 +205,73 @@ function draw(){
   line(343,571.5,1102,571.5)
   line(343,606,1102,606)
   line(343,640.5,1102,640.5)
-  line(343,675,1102,675)
+  line(343,675,1102,675)*/
   
   
   
   
-  if((player.x2 <1102)&&(keyIsDown(RIGHT_ARROW)) ||(keyIsDown(68))&&(player.x2 <1102)){
+  if((player.x2 <360)&&(keyIsDown(RIGHT_ARROW)) ||(keyIsDown(68))&&(player.x2 <360)){
     player.x += moveRight;
     player.x2 += moveRight;
     player.x3 += moveRight;
-    if(player.bullet == 720){
+    if(player.bullet == 320){
     player.xc += moveRight}
   }
-  if((player.x3 > 330)&&(keyIsDown(LEFT_ARROW)) ||(keyIsDown(65))&&(player.x3 > 330)){
+  if((player.x3 > -400)&&(keyIsDown(LEFT_ARROW)) ||(keyIsDown(65))&&(player.x3 > -400)){
     player.x -= moveLeft;
     player.x2 -= moveLeft;
     player.x3 -= moveLeft;
-    if(player.bullet == 720){
+    if(player.bullet == 320){
     player.xc -= moveLeft;
     }
   }
 
   
-if(document.getElementById("health").innerHTML == 0){
-  location.reload();
-  window.alert("you died");
-}
 
-if(document.getElementById("score").innerHTML== 10){
-  document.getElementById("lvl").innerHTML=2;
-  
-  speed1 =2;
-  speed2=4;
- }
-else if(document.getElementById("score").innerHTML == 20){
-  document.getElementById("lvl").innerHTML =3;
-  
-  speed1 =3;
-  speed2=6;
-    }
-else if(document.getElementById("score").innerHTML ==40){
-  document.getElementById("lvl").innerHTML= 4;
-  
-  speed1 =3;
-  speed2=7;
-    }
-else if(document.getElementById("score").innerHTML ==50){
-  document.getElementById("lvl").innerHTML =5
- 
-  speed1 =10;
-  speed2=20;
-  
-    }
       
     
 //if(keyIsDown(32)){
  //player.up()
 //}
-  if(mouseIsPressed){
-    player.up();
+  //if(mouseIsPressed){
+    //player.up();
 
-  }
+  //}
 
 
 }
 function keyPressed(){
-   if(keyCode == 32){
+   if(keyCode == 32){//shoot
     player.up();
     //window.alert(speed1)
-    window.alert(cuby[i].speed3)
-     
+
    }
-  else if((keyCode== 80) && (mon == false)){
+  else if((keyCode== 80) && (mon == false)){//pause
     noLoop();
     mon = true;
   }
-  else if((keyCode == 80) &&(mon == true)){
+  else if((keyCode == 80) &&(mon == true)){//pause
     loop();
     mon = false;
+  }
+  /*else if((player.x2 <761)&&(keyCode == 39) ||(keyCode==68)&&(player.x2 <761)){
+    //right
+    player.x += 3;
+    player.x2 += 3;
+    player.x3 += 3;
+    if(player.bullet == 320){
+      player.xc += 3}
+  }
+  else if((player.x3>-400) &&(keyCode == 37) ||(keyCode == 65)&&(player.x3 > -400)){//left
+    player.x -= 3;
+    player.x2 -= 3;
+    player.x3 -= 3;
+    if(player.bullet == 320){
+    player.xc -= 3;
+    }
+  }*/
+  else if(keyCode == 49){
+    window.alert(cuby.length)
   }
   
      }
