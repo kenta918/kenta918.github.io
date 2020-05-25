@@ -67,7 +67,7 @@ function cube(){
   this.show = function(){
     
     fill(255,0,0);
-    texture(img2)
+    texture(img1)
     rect(this.x,this.y,this.w,this.h)
     
     
@@ -95,7 +95,7 @@ function shooter(){
   }
   this.show2 = function(){
     fill(255,0,0)
-    texture(img1)
+    texture(img2)
     triangle(this.x,this.y,this.x2,this.y2,this.x3,this.y3)
   }
   
