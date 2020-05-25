@@ -38,27 +38,27 @@ function cube(){
         document.getElementById("lvl").innerHTML =3;
   
         this.speed1 =2;
-        this.speed2=6;
-        moveRight = 11
-        moveLeft =11;
+        this.speed2=5.8;
+        moveRight = 10.5
+        moveLeft =10.5
         shooter.lift = -80
     }
     else if(document.getElementById("score").innerHTML ==60){
         document.getElementById("lvl").innerHTML= 4;
   
         this.speed1 =2;
-        this.speed2=7;
-        moveRight = 12
-        moveLeft =12
+        this.speed2=6.8;
+        moveRight = 11
+        moveLeft =11
         shooter.lift = -90
       }
     else if(document.getElementById("score").innerHTML ==80){
       document.getElementById("lvl").innerHTML =5
  
       this.speed1 =2;
-      this.speed2=8;
-      moveRight = 13
-      moveLeft =13
+      this.speed2=73;
+      moveRight = 11.5
+      moveLeft =11.5
       shooter.lift = -200
   
     }
