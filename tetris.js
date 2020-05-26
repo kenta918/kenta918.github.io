@@ -26,14 +26,24 @@ function cube(){
       window.alert()
 }
 
-    if(document.getElementById("score").innerHTML== 15){
-        document.getElementById("lvl").innerHTML=2;
+    if(document.getElementById("score").innerHTML== 10){
+        document.getElementById("lvl").innerHTML=1;
         this.speed1 = 2;
         this.speed2=3.75;
         moveRight = 10
         moveLeft =10;
         shooter.lift = -70
  }
+ else if(document.getElementById("score").innerHTML ==20){
+      document.getElementById("lvl").innerHTML =2
+ 
+      this.speed1 =2;
+      this.speed2=5;
+      moveRight = 10
+      moveLeft =10
+      shooter.lift = -200
+  
+    }
     else if(document.getElementById("score").innerHTML == 25){
         document.getElementById("lvl").innerHTML =3;
   
@@ -48,8 +58,8 @@ function cube(){
   
         this.speed1 =2;
         this.speed2=4.75;
-        moveRight = 10.5
-        moveLeft =10.5
+        moveRight = 10.25
+        moveLeft =10.25
         shooter.lift = -90
       }
     else if(document.getElementById("score").innerHTML ==55){
@@ -68,7 +78,7 @@ function cube(){
       this.speed1 =2.3;
       this.speed2=5.25;
       moveRight = 10.5
-      moveLeft =11
+      moveLeft =10.5
       shooter.lift = -200
   
     }
