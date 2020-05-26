@@ -34,11 +34,11 @@ function cube(){
         moveLeft =10;
         shooter.lift = -70
  }
- else if(document.getElementById("score").innerHTML ==20){
+    else if(document.getElementById("score").innerHTML ==20){
       document.getElementById("lvl").innerHTML =2
  
       this.speed1 =2;
-      this.speed2=5;
+      this.speed2=4;
       moveRight = 10
       moveLeft =10
       shooter.lift = -200
