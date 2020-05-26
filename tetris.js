@@ -17,7 +17,7 @@ function cube(){
     }
     if(document.getElementById("health").innerHTML == 0){
        location.reload();
-        window.alert("you died");
+        window.alert("you died. NICE TRY:)");
       //storeItem('sco',document.getElementById("score").innerHTML);
       //storeItem('lv',document.getElementById("lvl").innerHTML);
       //highScore = getItem('sco');
