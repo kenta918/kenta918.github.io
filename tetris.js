@@ -57,46 +57,46 @@ function cube(){
         document.getElementById("lvl").innerHTML= 4;
   
         this.speed1 =2;
-        this.speed2=4.75;
+        this.speed2=4.5;
         moveRight = 10.25
         moveLeft =10.25
         shooter.lift = -90
       }
-    else if(document.getElementById("score").innerHTML ==55){
+    else if(document.getElementById("score").innerHTML ==60){
       document.getElementById("lvl").innerHTML =5
  
       this.speed1 =2.1;
+      this.speed2=4.75;
+      moveRight = 10.5
+      moveLeft =10.5
+      shooter.lift = -200
+
+    }
+    else if(document.getElementById("score").innerHTML ==70){
+      document.getElementById("lvl").innerHTML =6
+ 
+      this.speed1 =2.3;
       this.speed2=5;
       moveRight = 10.5
       moveLeft =10.5
       shooter.lift = -200
   
     }
-    else if(document.getElementById("score").innerHTML ==60){
-      document.getElementById("lvl").innerHTML =6
+    else if(document.getElementById("score").innerHTML ==85){
+      document.getElementById("lvl").innerHTML =7
  
-      this.speed1 =2.3;
+      this.speed1 =2.5;
       this.speed2=5.25;
       moveRight = 10.5
       moveLeft =10.5
       shooter.lift = -200
   
     }
-    else if(document.getElementById("score").innerHTML ==75){
-      document.getElementById("lvl").innerHTML =7
- 
-      this.speed1 =2.5;
-      this.speed2=5.5;
-      moveRight = 10.5
-      moveLeft =10.5
-      shooter.lift = -200
-  
-    }
-    else if(document.getElementById("score").innerHTML ==90){
+    else if(document.getElementById("score").innerHTML ==95){
       document.getElementById("lvl").innerHTML =8
  
       this.speed1 =2.7;
-      this.speed2=5.75;
+      this.speed2=5.5;
       moveRight = 10.5
       moveLeft =10.5
       shooter.lift = -200
@@ -106,7 +106,7 @@ function cube(){
       document.getElementById("lvl").innerHTML =9
  
       this.speed1 =2.9;
-      this.speed2=6;
+      this.speed2=5.5;
       moveRight = 10.75
       moveLeft =10.75
       shooter.lift = -200
@@ -116,17 +116,17 @@ function cube(){
       document.getElementById("lvl").innerHTML =10
  
       this.speed1 =3;
-      this.speed2=6.25;
+      this.speed2=5.75;
       moveRight = 10.75
       moveLeft =10.75
       shooter.lift = -200
-  
+
     }
     else if(document.getElementById("score").innerHTML ==135){
       document.getElementById("lvl").innerHTML =11
  
       this.speed1 =3.1;
-      this.speed2=6.5;
+      this.speed2=5.75;
       moveRight = 10.75
       moveLeft =10.75
       shooter.lift = -200
@@ -136,7 +136,7 @@ function cube(){
       document.getElementById("lvl").innerHTML =12
  
       this.speed1 =3.2;
-      this.speed2=6.75
+      this.speed2=5.9
       moveRight = 10.75
       moveLeft =10.75
       shooter.lift = -200
@@ -145,8 +145,8 @@ function cube(){
     else if(document.getElementById("score").innerHTML ==165){
       document.getElementById("lvl").innerHTML =13
  
-      this.speed1 =3.5;
-      this.speed2=7;
+      this.speed1 =3.4;
+      this.speed2=6
       moveRight = 10.75
       moveLeft =10.75
       shooter.lift = -200
@@ -155,8 +155,8 @@ function cube(){
    else if(document.getElementById("score").innerHTML ==180){
       document.getElementById("lvl").innerHTML =14
  
-      this.speed1 =3.6;
-      this.speed2=7.25;
+      this.speed1 =3.5;
+      this.speed2=6.25;
       moveRight = 10.75
       moveLeft =10.75
       shooter.lift = -200
@@ -165,8 +165,8 @@ function cube(){
     else if(document.getElementById("score").innerHTML ==195){
       document.getElementById("lvl").innerHTML =15
  
-      this.speed1 =3.7;
-      this.speed2=7.5;
+      this.speed1 =3.5;
+      this.speed2=6.5;
       moveRight = 10.75
       moveLeft =10.75
       shooter.lift = -200
@@ -176,7 +176,7 @@ function cube(){
       document.getElementById("lvl").innerHTML =16
  
       this.speed1 =3.75;
-      this.speed2=7.75;
+      this.speed2=6.75;
       moveRight = 10.75
       moveLeft =10.75
       shooter.lift = -200
@@ -185,8 +185,8 @@ function cube(){
     else if(document.getElementById("score").innerHTML ==225){
       document.getElementById("lvl").innerHTML =17
  
-      this.speed1 =3.8;
-      this.speed2=8;
+      this.speed1 =3.75;
+      this.speed2=6.9;
       moveRight = 10.75
       moveLeft =10.75
       shooter.lift = -200
@@ -196,7 +196,7 @@ function cube(){
       document.getElementById("lvl").innerHTML =18
  
       this.speed1 =3.9;
-      this.speed2=8.25;
+      this.speed2=7.25;
       moveRight = 10.75
       moveLeft =10.75
       shooter.lift = -200
@@ -206,7 +206,7 @@ function cube(){
       document.getElementById("lvl").innerHTML =19
  
       this.speed1 =4;
-      this.speed2=8.5;
+      this.speed2=7.5;
       moveRight = 10.75
       moveLeft =10.75
       shooter.lift = -200
@@ -216,17 +216,17 @@ function cube(){
       document.getElementById("lvl").innerHTML =20
  
       this.speed1 =4.5;
-      this.speed2=10;
+      this.speed2=8;
       moveRight = 10.75
       moveLeft =10.75
       shooter.lift = -200
-  
+
     }
     else if(document.getElementById("score").innerHTML ==300){
       document.getElementById("lvl").innerHTML = 30
  
       this.speed1 =4.6;
-      this.speed2=12;
+      this.speed2=8.9;
       moveRight = 10.75
       moveLeft =10.75
       shooter.lift = -200
@@ -236,7 +236,7 @@ function cube(){
       document.getElementById("lvl").innerHTML =40
  
       this.speed1 =4.8;
-      this.speed2=12.5;
+      this.speed2=9.5;
       moveRight = 10.75
       moveLeft =10.75
       shooter.lift = -200
@@ -246,15 +246,16 @@ function cube(){
       document.getElementById("lvl").innerHTML =100
  
       this.speed1 =6;
-      this.speed2=15;
+      this.speed2=12;
       moveRight = 10.75
       moveLeft =10.75
       shooter.lift = -200
   
     }
-    else if(document.getElementById("score").innerHTML > 502){
+    else if(document.getElementById("score").innerHTML > 550){
       document.getElementById("lvl").innerHTML = 1000
       window.alert("You win!")
+      noLoop();
       //his.speed1 =2;
       //this.speed2=5;
       //moveRight = 10.75
