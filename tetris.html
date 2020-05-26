@@ -68,7 +68,6 @@
     <div id="box"><p><b>Score</b></p><p id="score"></p></div>
     <div id="box2"><p><b>HP</b></p><p id="health"></p></div>
     <div id="box3"><p><b>Level</b></p><p id="lvl"></p></div>
-    <div id="box4"><p><b>High Scores</b></p><p></p></div>
 
     
     <script>
@@ -91,11 +90,14 @@ var img2;
 var hit2 = false
 fr =60;
 mon = false
+var endL=[]
+var endS=[]
 
-document.getElementById("lvl").innerHTML = levels
+ var levels = document.getElementById("lvl").innerHTML
+ var score = document.getElementById("score").innerHTML
 function preload(){
   img1=loadImage('ship.png')
-  img2=loadImage('shot.png')
+    //img2=loadImage('shot.png')
 }
 function setup(){
 
@@ -224,6 +226,7 @@ function draw(){
     if(player.bullet == 320){
     player.xc -= moveLeft;
     }
+    
   }
 
   
@@ -233,10 +236,10 @@ function draw(){
 //if(keyIsDown(32)){
  //player.up()
 //}
-  //if(mouseIsPressed){
-    //player.up();
+  if(mouseIsPressed){
+    player.up();
 
-  //}
+  }
 
 
 }
@@ -276,9 +279,35 @@ function keyPressed(){
   
      }
 
+
+ /*  if(document.getElementById("health").innerHTML == 0){
+     localStorage.setItem("info", levels);
+     localStorage.setItem("info2", score);
+   }
  
 
 
+    window.onload  function(){
+      endl = localstorage.getItem("info")
+      ends = localstorage.getItem("info2")
+      window.alert(endl)
+      for(i=o; i < 5; i++){
+        var node=  document.createElement('li')
+        node.setAttribute('class', "list")
+        endLnode = document.createTextNode(ends)
+        node.appendChild(endLnode)
+      }
+      for(i=o; i < 5; i++){
+        var node=  document.createElement('li')
+        node.setAttribute('class', "list2")
+        endSnode = document.createTextNode(ends)
+        node.appendChild(endSnode)
+      }
+      
+      //document.getElementById("highLvl").innerHTML = localstorage.getItem("info")
+      //document.getElementById("highSco").innerHTML = localstorage.getItem("info2")
+
+  }*/
 
 
 

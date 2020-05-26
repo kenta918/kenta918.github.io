@@ -18,12 +18,11 @@ function cube(){
     if(document.getElementById("health").innerHTML == 0){
        location.reload();
         window.alert("you died");
-      storeItem('sco',document.getElementById("score").innerHTML);
-      storeItem('lv',document.getElementById("lvl").innerHTML);
+      //storeItem('sco',document.getElementById("score").innerHTML);
+      //storeItem('lv',document.getElementById("lvl").innerHTML);
       //highScore = getItem('sco');
-      document.getElementById("past").innerHTML = getItem('sco')
-      document.getElementById("past").innerHMTL = getitem('lv')
-      window.alert()
+      //document.getElementById("past").innerHTML = getItem('sco')
+      //document.getElementById("past").innerHMTL = getitem('lv')
 }
 
     if(document.getElementById("score").innerHTML== 10){
@@ -32,7 +31,10 @@ function cube(){
         this.speed2=3.75;
         moveRight = 10
         moveLeft =10;
-        shooter.lift = -70
+        //shooter.lift = -70
+        
+       
+  
  }
     else if(document.getElementById("score").innerHTML ==20){
       document.getElementById("lvl").innerHTML =2
@@ -41,7 +43,8 @@ function cube(){
       this.speed2=4;
       moveRight = 10
       moveLeft =10
-      shooter.lift = -200
+      //shooter.lift = -200
+      
   
     }
     else if(document.getElementById("score").innerHTML == 25){
@@ -51,7 +54,7 @@ function cube(){
         this.speed2=4.25;
         moveRight = 10.25
         moveLeft =10.25
-        shooter.lift = -80
+        //shooter.lift = -80
     }
     else if(document.getElementById("score").innerHTML ==40){
         document.getElementById("lvl").innerHTML= 4;
@@ -60,7 +63,7 @@ function cube(){
         this.speed2=4.5;
         moveRight = 10.25
         moveLeft =10.25
-        shooter.lift = -90
+        //shooter.lift = -90
       }
     else if(document.getElementById("score").innerHTML ==60){
       document.getElementById("lvl").innerHTML =5
@@ -69,7 +72,10 @@ function cube(){
       this.speed2=4.75;
       moveRight = 10.5
       moveLeft =10.5
-      shooter.lift = -200
+      //shooter.lift = -200
+      shooter.y=300;
+      shooter.x2=40;
+      shooter.x3= -40;
 
     }
     else if(document.getElementById("score").innerHTML ==70){
@@ -79,7 +85,7 @@ function cube(){
       this.speed2=5;
       moveRight = 10.5
       moveLeft =10.5
-      shooter.lift = -200
+      //shooter.lift = -200
   
     }
     else if(document.getElementById("score").innerHTML ==85){
@@ -89,7 +95,7 @@ function cube(){
       this.speed2=5.25;
       moveRight = 10.5
       moveLeft =10.5
-      shooter.lift = -200
+      //shooter.lift = -200
   
     }
     else if(document.getElementById("score").innerHTML ==95){
@@ -99,7 +105,7 @@ function cube(){
       this.speed2=5.5;
       moveRight = 10.5
       moveLeft =10.5
-      shooter.lift = -200
+      //shooter.lift = -200
   
     }
     else if(document.getElementById("score").innerHTML ==105){
@@ -109,7 +115,7 @@ function cube(){
       this.speed2=5.5;
       moveRight = 10.75
       moveLeft =10.75
-      shooter.lift = -200
+      //shooter.lift = -200
   
     }
     else if(document.getElementById("score").innerHTML ==120){
@@ -119,7 +125,8 @@ function cube(){
       this.speed2=5.75;
       moveRight = 10.75
       moveLeft =10.75
-      shooter.lift = -200
+      //shooter.lift = -200
+     
 
     }
     else if(document.getElementById("score").innerHTML ==135){
@@ -129,7 +136,8 @@ function cube(){
       this.speed2=5.75;
       moveRight = 10.75
       moveLeft =10.75
-      shooter.lift = -200
+      //shooter.lift = -200
+      shooter.y=270
   
     }
     else if(document.getElementById("score").innerHTML ==150){
@@ -139,7 +147,8 @@ function cube(){
       this.speed2=5.9
       moveRight = 10.75
       moveLeft =10.75
-      shooter.lift = -200
+      //shooter.lift = -200
+      shooter.y = 260
   
     }
     else if(document.getElementById("score").innerHTML ==165){
@@ -149,7 +158,9 @@ function cube(){
       this.speed2=6
       moveRight = 10.75
       moveLeft =10.75
-      shooter.lift = -200
+      //shooter.lift = -200
+      shooter.y = 250
+
   
     }
    else if(document.getElementById("score").innerHTML ==180){
@@ -159,8 +170,9 @@ function cube(){
       this.speed2=6.25;
       moveRight = 10.75
       moveLeft =10.75
-      shooter.lift = -200
-  
+      //shooter.lift = -200
+        shooter.y = 240
+
     }
     else if(document.getElementById("score").innerHTML ==195){
       document.getElementById("lvl").innerHTML =15
@@ -169,7 +181,8 @@ function cube(){
       this.speed2=6.5;
       moveRight = 10.75
       moveLeft =10.75
-      shooter.lift = -200
+      //shooter.lift = -200
+
   
     }
     else if(document.getElementById("score").innerHTML ==210){
@@ -179,7 +192,7 @@ function cube(){
       this.speed2=6.75;
       moveRight = 10.75
       moveLeft =10.75
-      shooter.lift = -200
+      //shooter.lift = -200
   
     }
     else if(document.getElementById("score").innerHTML ==225){
@@ -189,7 +202,7 @@ function cube(){
       this.speed2=6.9;
       moveRight = 10.75
       moveLeft =10.75
-      shooter.lift = -200
+      //shooter.lift = -200
   
     }
     else if(document.getElementById("score").innerHTML ==240){
@@ -199,7 +212,7 @@ function cube(){
       this.speed2=7.25;
       moveRight = 10.75
       moveLeft =10.75
-      shooter.lift = -200
+      //shooter.lift = -200
   
     }
     else if(document.getElementById("score").innerHTML ==255){
@@ -209,7 +222,7 @@ function cube(){
       this.speed2=7.5;
       moveRight = 10.75
       moveLeft =10.75
-      shooter.lift = -200
+      //shooter.lift = -200
   
     }
     else if(document.getElementById("score").innerHTML ==270){
@@ -219,7 +232,7 @@ function cube(){
       this.speed2=8;
       moveRight = 10.75
       moveLeft =10.75
-      shooter.lift = -200
+      //shooter.lift = -200
 
     }
     else if(document.getElementById("score").innerHTML ==300){
@@ -229,7 +242,7 @@ function cube(){
       this.speed2=8.9;
       moveRight = 10.75
       moveLeft =10.75
-      shooter.lift = -200
+      //shooter.lift = -200
   
     }
     else if(document.getElementById("score").innerHTML ==400){
@@ -239,7 +252,7 @@ function cube(){
       this.speed2=9.5;
       moveRight = 10.75
       moveLeft =10.75
-      shooter.lift = -200
+      //shooter.lift = -200
   
     }
     else if(document.getElementById("score").innerHTML ==500){
@@ -249,7 +262,7 @@ function cube(){
       this.speed2=12;
       moveRight = 10.75
       moveLeft =10.75
-      shooter.lift = -200
+      //shooter.lift = -200
   
     }
     else if(document.getElementById("score").innerHTML > 550){
@@ -287,15 +300,14 @@ function shooter(){
   this.bullet =700
   this.xc = this.x
   this.gravity = 0
-  this.lift=-60
+  this.lift=-80
   this.velo=0
   
   this.update2 = function(){
     
   }
   this.show2 = function(){
-    fill(255,0,0)
-    texture(img2)
+    fill(0,255,0)
     triangle(this.x,this.y,this.x2,this.y2,this.x3,this.y3)
   }
   
