@@ -3,12 +3,18 @@ let video;
 let poseNet;
 let poses = [];
 var eyes = [1,2]
-
+let lhX;
+let lhY;
+let pLhX;
+let pLhY;
+let pg;
+let skeleton =[]
 function setup() {
   createCanvas(640, 480);
   video = createCapture(VIDEO);
   video.size(width, height);
-
+  pixelDensity(1);
+  pg = createGraphics(width, height);
   // Create a new poseNet method with a single detection
   poseNet = ml5.poseNet(video, modelReady);
   // This sets up an event that fills the global variable "poses"
@@ -26,10 +32,10 @@ function modelReady() {
 
 function draw() {
   image(video, 0, 0, width, height);
-
+  image(pg, 0, 0, width, height);
   // We can call both functions to draw all keypoints and the skeletons
   drawKeypoints();
-  drawSkeleton();
+  //drawSkeleton();
 }
 
 // A function to draw ellipses over the detected keypoints
@@ -43,14 +49,21 @@ function drawKeypoints()  {
       let keypoint = pose.keypoints[j];
       // Only draw an ellipse is the pose probability is bigger than 0.2
       if (keypoint.score > 0.2) {
-        fill(50, 168, 70);
-        stroke(255, 204, 0);
-        strokeWeight(4);
+        if(j==9){
+        
        
+        lhX=keypoint.position.x;
+        lhY=keypoint.position.y;
+        pg.fill(50, 168, 70);
+        pg.stroke(255, 204, 0);
+        pg.strokeWeight(4);
+
         ellipse(keypoint.position.x, keypoint.position.y, 10, 10);
-        
-        
-          
+        pg.line(lhX,lhY,pLhX,pLhY)
+        pLhX = lhX
+        pLhY = lhY
+
+      }
       }
     }
   }
