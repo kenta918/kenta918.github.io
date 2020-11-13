@@ -8,9 +8,8 @@ let lhY;
 let pLhX;
 let pLhY;
 let pg;
-let skeleton =[]
 function setup() {
-  createCanvas(640, 480);
+  createCanvas(1200, 700);
   video = createCapture(VIDEO);
   video.size(width, height);
   pixelDensity(1);
@@ -35,7 +34,7 @@ function draw() {
   image(pg, 0, 0, width, height);
   // We can call both functions to draw all keypoints and the skeletons
   drawKeypoints();
-  //drawSkeleton();
+  drawSkeleton();
 }
 
 // A function to draw ellipses over the detected keypoints
@@ -49,14 +48,14 @@ function drawKeypoints()  {
       let keypoint = pose.keypoints[j];
       // Only draw an ellipse is the pose probability is bigger than 0.2
       if (keypoint.score > 0.2) {
-        if(j==9){
+        if(j==10){
         
        
         lhX=keypoint.position.x;
         lhY=keypoint.position.y;
         pg.fill(50, 168, 70);
         pg.stroke(255, 204, 0);
-        pg.strokeWeight(4);
+        pg.strokeWeight(15);
 
         ellipse(keypoint.position.x, keypoint.position.y, 10, 10);
         pg.line(lhX,lhY,pLhX,pLhY)
