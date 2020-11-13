@@ -3,10 +3,7 @@ let video;
 let poseNet;
 let poses = [];
 var eyes = [1,2]
-let img;
-function preload() {
-  img = loadImage('googlyEye.jpg');
-}
+
 function setup() {
   createCanvas(640, 480, WEBGL);
   video = createCapture(VIDEO);
@@ -49,7 +46,7 @@ function drawKeypoints()  {
         fill(50, 168, 70);
         stroke(255, 204, 0);
         strokeWeight(4);
-        texture(img)
+       
         ellipse(keypoint.position.x, keypoint.position.y, 10, 10);
         
         
