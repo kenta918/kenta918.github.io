@@ -2,9 +2,13 @@
 let video;
 let poseNet;
 let poses = [];
-
+var eyes = [1,2]
+let img;
+function preload() {
+  img = loadImage('googlyEye.jpg');
+}
 function setup() {
-  createCanvas(640, 480);
+  createCanvas(640, 480, WEBGL);
   video = createCapture(VIDEO);
   video.size(width, height);
 
@@ -43,8 +47,13 @@ function drawKeypoints()  {
       // Only draw an ellipse is the pose probability is bigger than 0.2
       if (keypoint.score > 0.2) {
         fill(50, 168, 70);
-        noStroke();
+        stroke(255, 204, 0);
+        strokeWeight(4);
+        texture(img)
         ellipse(keypoint.position.x, keypoint.position.y, 10, 10);
+        
+        
+          
       }
     }
   }
