@@ -5,7 +5,7 @@ let poses = [];
 var eyes = [1,2]
 
 function setup() {
-  createCanvas(640, 480, WEBGL);
+  createCanvas(640, 480);
   video = createCapture(VIDEO);
   video.size(width, height);
 
